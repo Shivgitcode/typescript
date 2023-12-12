@@ -35,3 +35,19 @@ const stuff: (number | string)[] = [1, 23, 4, 5, 6, "das"];
 const coords: (Point3 | Loc)[] = [];
 coords.push({ lat: 321.213, long: 23.334 });
 coords.push({ x: 213, y: 43 });
+
+// let zero:0=0;
+
+let mood: "Happy" | "Sad" = "Happy";
+mood = "Sad";
+
+type DayOfWeek =
+  | "Monday"
+  | "Tuesday"
+  | "Wednesday"
+  | "Thursday"
+  | "Friday"
+  | "Saturday"
+  | "Sunday";
+
+let today: DayOfWeek = "Monday";
