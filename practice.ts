@@ -103,12 +103,103 @@ const user3: { firstname: string; lastname: string } & {
 
 // let cars:string[]=["ford","cheverlotte","audi","bmw","range rover"]
 
-function Cars(): string[] {
-  let car: string[] = [];
-  return car;
+// function Cars(): string[] {
+//   let car: string[] = [];
+//   return car;
+// }
+
+// const car1 = Cars();
+
+// car1.push("BMW");
+// car1.length;
+
+// multidimensional array
+
+// const game:string[][]=[['X','O','X'],['X','O','X']]
+
+// union types
+
+let day: number | string = "Monday";
+day = 3;
+// day = true;
+
+function Money(num: string | number) {
+  // return num.replace("$","")
+  // typenarrowing ka use karenge
+  if (typeof num === "string") {
+    return num.replace("$", "");
+  }
+  return num * 4;
 }
 
-const car1 = Cars();
+function age(num: string | number) {
+  if (typeof num === "string") {
+    return num.charAt(0);
+  }
+  return `your age is ${num}.`;
+}
 
-car1.push("BMW");
-car1.length;
+age(30);
+age("30");
+
+// union types with arrays
+
+let arr1: (string | number)[] = ["shivansh", 30, "hello", 40];
+arr1[2] = "world";
+
+let arr2: string[] | number[] = ["shivansh", "hello"];
+arr2 = [30, 50];
+
+type Cat = {
+  name: string;
+  color: string;
+};
+
+type cars = {
+  model: string;
+  year: number;
+};
+
+let arr3: (Cat | cars)[] = [
+  { name: "juhu", color: "white" },
+  { model: "x5", year: 2023 },
+];
+
+let arr4: Cat[] | cars[] = [{ name: "jojo", color: "brown" }];
+
+// literal type
+
+type WeekDay =
+  | "Monday"
+  | "Tuesday"
+  | "Wednesday"
+  | "Thursday"
+  | "Friday"
+  | "Saturday"
+  | "Sunday";
+
+const myHoliday: WeekDay = "Tuesday";
+
+function request(input: "yes" | "no" | "maybe"): string {
+  return input;
+}
+
+console.log(request("yes"));
+
+// tuple
+
+let arr5: [number, number] = [200, 300];
+let arr6: [number, string] = [200, "recieved"];
+arr6 = [404, "error"];
+
+// enum
+
+enum Controls {
+  up = 30,
+  down,
+  right,
+  left,
+}
+
+let moveUp = Controls.up;
+let moveDown = Controls.down;
