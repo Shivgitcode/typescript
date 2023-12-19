@@ -1,3 +1,4 @@
+"use strict";
 // function square(num: number) {
 //   return num * num;
 // }
@@ -42,8 +43,8 @@
 //   return msg;
 //   throw new Error(msg);
 // }
-function gameLoop() {
-    while (true) {
-        console.log("Game Loop Running!");
-    }
-}
+// function gameLoop(): never {
+//   while (true) {
+//     console.log("Game Loop Running!");
+//   }
+// }
